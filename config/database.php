@@ -58,9 +58,11 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
-            'sslmode' => 'disabled', // ✅ SSL மோடை நேரடியாக டிஸேபிள் செய்தாச்சு!
+            'sslmode' => 'none', 
             'options' => [
-                PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false, // ✅ Aiven SSL எரரைத் தடுக்கும் மேஜிக் வரி!
+                PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
+                PDO::MYSQL_ATTR_SSL_CA => null,
+                PDO::MYSQL_ATTR_SSL_CAPATH => null,
             ],
         ],
 
