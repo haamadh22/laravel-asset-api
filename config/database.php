@@ -58,12 +58,10 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
-            'sslmode' => 'none', 
-            'options' => [
+            'sslmode' => 'none',
+            'options' => extension_loaded('pdo_mysql') && defined('PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT') ? [
                 PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
-                PDO::MYSQL_ATTR_SSL_CA => null,
-                PDO::MYSQL_ATTR_SSL_CAPATH => null,
-            ],
+            ] : [],
         ],
 
         'mariadb' => [
